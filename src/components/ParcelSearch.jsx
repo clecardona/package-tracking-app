@@ -10,21 +10,17 @@ export default function ParcelSearch({ id, parcel_id, user_name }) {
   
   // Local state
 
-  const [query, setQuery] = useState("lolo et rico ");
+  const [query, setQuery] = useState("");
   const [parcels, setParcels] = useState([]);
 
 
-  
+
   useEffect( () => {
 
-  }
+  },[parcels]
   )
 
   // Constants
-
-  const matchedParcels = parcels.filter((item)=> item.user_name === query)
-  .map( item =>  <Parcel key={item.id} user_name= {item.user_name} parcel_id={item.parcel_id}  /> );
-
 
 
   //Methods
@@ -32,12 +28,17 @@ export default function ParcelSearch({ id, parcel_id, user_name }) {
   //handle the click :
    function onSearch(event){  
     event.preventDefault();
-    setParcels(MyJSON);
 
-    }
+   // modifier array parcels 
+    const matchedParcels = MyJSON.filter((item)=> item.user_name === query)
+    .map( item =>  <Parcel key={item.id} user_name= {item.user_name} parcel_id={item.parcel_id}  /> );
+  
+    //change the state    
 
+    setParcels(matchedParcels);  
+
+    }   
    
-    
     
 
 
@@ -47,7 +48,7 @@ return (
       <div className="container">
         {/* Search bar */}
         {
-          <form  onSubmit={onSearch} className="search-bar">
+          <form onSubmit={onSearch} className="search-bar">
 
             <input
               type="text"
@@ -69,7 +70,7 @@ return (
 
       <div className="container">        
         <h2>Parcels available for {query} :</h2>
-       { <ol>{matchedParcels}</ol> }
+       { <ol>{parcels}</ol> }
       </div>
     </main>
   );
