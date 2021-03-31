@@ -1,0 +1,15 @@
+@import url('_layout.css');
+@import url('_header.css');
+@import url('_main.css');
+
+:root{
+
+
+--header-height:10vh;
+
+--font-default-mobile:18px;
+--font-default-laptop:16px;
+
+--blue:rgb(139, 166, 201);
+
+}

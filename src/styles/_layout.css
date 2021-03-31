@@ -1,0 +1,16 @@
+html{
+    height: 100%;
+    font-size: var(--font-default-mobile);
+    }
+    
+    body{
+    margin:0;
+    display: grid;
+    grid-template-rows: var(--header-height) 1fr  ;
+    }
+
+
+    li{
+        font-size:10px;
+    }
+    
