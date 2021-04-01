@@ -1,12 +1,12 @@
 html{
     height: 100%;
     font-size: var(--font-default-mobile);
-        
+    margin:10px;    
     }
 
     
     body{
-    margin:10px;
+    margin: auto;
     display: grid;
     grid-template-rows: var(--header-height) 1fr  ;
     font-family: 'Montserrat', sans-serif;
