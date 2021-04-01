@@ -1,13 +1,12 @@
-import * as moment from 'moment'
+import Moment from 'react-moment';
 
-export default function Parcel({id,parcel_id,user_name,eta,location_name,status} ){
+export default function Parcel({id,parcel_id,eta,location_name,status} ){
     
-    const estimatedArrivalDate = moment({eta}).format("DD MMM");
-
+    const estimatedArrivalDate = <Moment format="DD MMM YY" >{eta}</Moment>
    
 
     return(        
-        <li>      
+        <li key={id}>      
                  
             <p> # {parcel_id} </p> 
             <p>{status}</p>  
