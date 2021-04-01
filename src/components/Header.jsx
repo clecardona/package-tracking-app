@@ -1,10 +1,12 @@
 
+import logo from '../assets/logo.png';
+
 
 export default function Header() {
     return (
       <header > 
-        <p># Package Tracking App </p>
-               
+        <img src= {logo} alt="Logo" />
+        <p>Package Tracking App </p>               
       </header>
     );
   }

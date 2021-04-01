@@ -78,6 +78,10 @@ ol li{
     font-size: 12px;
     color:rgb(180, 180, 180);
 }
+#results-notfound{
+    font-size: 14px;
+    color:rgb(180, 180, 180);
+}
 
 
 

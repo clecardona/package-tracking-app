@@ -72,7 +72,7 @@ export default function ParcelSearch({ id, parcel_id, user_name }) {
 
       {/* Display of parcels */}
 
-      {match === false && <p> No parcel found </p> }
+      {match === false && <p id="results-notfound"> No parcel found for {currentQueryValue}</p> }
          
      
       {parcels.length < 1 ? (
