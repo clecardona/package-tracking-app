@@ -10,7 +10,10 @@ import Parcel from "./Parcel";
 export default function ParcelSearch({ id, parcel_id, user_name }) {
   
   // State
-  const [request, setRequest] = useState(0);
+  const [currentQueryValue, setCurrentQueryValue] = useState("");
+
+  const [match, setMatch] = useState(true);
+
   const [query, setQuery] = useState("");
   const [parcels, setParcels] = useState([]);
 
@@ -40,8 +43,10 @@ export default function ParcelSearch({ id, parcel_id, user_name }) {
       />
     ));
     //change the state by setting the array of results as new state
-    setParcels(matchedParcels);
-    setRequest(1);
+    setParcels(matchedParcels);    
+    setCurrentQueryValue(query );
+    {matchedParcels.length < 1 && setMatch(false) }
+    {matchedParcels.length > 1 && setMatch(true) }
   }
 
   // Return
@@ -67,7 +72,7 @@ export default function ParcelSearch({ id, parcel_id, user_name }) {
 
       {/* Display of parcels */}
 
-      {request === 0 && <p> enter a name </p> }
+      {match === false && <p> No parcel found </p> }
          
      
       {parcels.length < 1 ? (
@@ -75,8 +80,7 @@ export default function ParcelSearch({ id, parcel_id, user_name }) {
       ) : (
         <div className="container-results">
           <div id="results-title">
-            <p>Parcels available for :</p>
-            <p id="query"> {query} </p>
+            <p>Parcels available for : {currentQueryValue}</p>            
           </div>
 
           <ul>
