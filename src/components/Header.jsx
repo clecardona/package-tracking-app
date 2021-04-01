@@ -3,9 +3,8 @@
 export default function Header() {
     return (
       <header > 
-        
-        Package Tracking App
-       
+        <p>Package Tracking App </p>
+               
       </header>
     );
   }
