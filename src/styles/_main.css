@@ -55,13 +55,15 @@ ul , ol li{
     align-items: center;
     text-align: center;    
 
-    list-style-type: none;
+    
     
 }
 
 ul{
+
     height: 30px;     
     font-weight: bold;
+    list-style-type: none;
 }
 
 ol li{

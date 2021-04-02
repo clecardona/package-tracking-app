@@ -2,59 +2,54 @@
 import { useEffect, useState } from "react";
 
 // Project files
-import MyJSON from "../data/orders.json";
 import Parcel from "./Parcel";
 
-
-
 export default function ParcelSearch({ id, parcel_id, user_name }) {
-  
   // State
-  const [currentQueryValue, setCurrentQueryValue] = useState("");
-
-  const [match, setMatch] = useState(true);
-
-  const [query, setQuery] = useState("");
-  const [parcels, setParcels] = useState([]);
-
-  /*  useEffect(() => {
-  }, [setParcels]); */
-
+  const [query, setQuery] = useState(""); // the query
+  const [currentQueryValue, setCurrentQueryValue] = useState(""); // keep a carbon copy of the query
+  const [match, setMatch] = useState(true); // is there any match (parcel found)
+  const [parcels, setParcels] = useState([]); // array of parcels
+  const [data, setData] = useState([]); // result of API fetch
 
   // Constants
- //  api_url
+  const API_URL = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((json) => setData(json));
+  }, []);
 
   //Methods
-
-  //handle the click
   function onSearch(event) {
     event.preventDefault();
-    // search name into JSON
-    const matchedParcels = MyJSON.filter(
-      (item) => item.user_name === query
-    ).map((item) => (
-      <Parcel
-        key={item.id}
-        user_name={item.user_name}
-        parcel_id={item.parcel_id}
-        status={item.status}
-        eta={item.eta}
-        location_name={item.location_name}
-      />
-    ));
+    // search user_name into JSON data
+    const matchedParcels = data
+      .filter((item) => item.user_name === query)
+      .map((item) => (
+        <Parcel
+          key={item.id}
+          user_name={item.user_name}
+          parcel_id={item.parcel_id}
+          status={item.status}
+          eta={item.eta}
+          location_name={item.location_name}
+        />
+      ));
     //change the state by setting the array of results as new state
-    setParcels(matchedParcels);    
-    setCurrentQueryValue(query );
-    {matchedParcels.length < 1 && setMatch(false) }
-    {matchedParcels.length > 1 && setMatch(true) }
+    setParcels(matchedParcels);
+    setCurrentQueryValue(query);
+    {
+      matchedParcels.length < 1 ? setMatch(false) : setMatch(true);
+    }
   }
 
-  // Return
-  return (
+   return (
     <main>
       <div className="container-search">
-        {/* Search bar */}
-        {
+
+        {/* Search bar */}        {
           <form onSubmit={onSearch} id="search-bar">
             <input
               id="search-area"
@@ -71,16 +66,14 @@ export default function ParcelSearch({ id, parcel_id, user_name }) {
       </div>
 
       {/* Display of parcels */}
+      {match === false && (
+        <p id="results-notfound"> No parcel found for {currentQueryValue}</p>
+      )}
 
-      {match === false && <p id="results-notfound"> No parcel found for {currentQueryValue}</p> }
-         
-     
-      {parcels.length < 1 ? (
-        <p></p>
-      ) : (
+      {parcels.length > 1 && (
         <div className="container-results">
           <div id="results-title">
-            <p>Parcels available for : {currentQueryValue}</p>            
+            <p>Parcels available for : {currentQueryValue}</p>
           </div>
 
           <ul>
@@ -94,13 +87,7 @@ export default function ParcelSearch({ id, parcel_id, user_name }) {
 
           <div id="results-footer">-</div>
         </div>
-      )}  
-         
-      
-      
-      
-
-
+      )}
     </main>
   );
 }
