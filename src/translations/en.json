@@ -1,0 +1,18 @@
+{
+    "main": {
+        "title": "Parcel tracker",
+        "language": "language",
+
+        "form-placeholder": "Enter username (case sensitive)",
+        "form-submit-value": "Search",
+
+        "number": "Number",
+        "status": "Status",
+        "eta": "ETA",
+        "location": "Pick up Location",
+
+        "nofound": "No parcel found for",
+        "found": "Parcels available for"
+        
+    }
+}

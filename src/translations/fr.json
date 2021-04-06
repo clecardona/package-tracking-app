@@ -1,3 +1,17 @@
 {
-    "hello": "Salut le Monde!"
-  }
+    "main": {
+        "title": "Suivi de colis",
+        "language": "langue",
+
+        "form-placeholder": "Entrer username (sensible a la casse)",
+        "form-submit-value": "Chercher",
+
+        "number": "Numero",
+        "status": "Statut",
+        "eta": "date d'arrivée estimée",
+        "location": "Point de retrait",
+
+        "nofound": "Pas de colis trouvé pour",
+        "found": "Colis disponible pour"
+    }
+}
