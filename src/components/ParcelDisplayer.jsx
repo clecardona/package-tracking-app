@@ -21,7 +21,6 @@ export default function ParcelDisplayer({match,currentQueryValue,parcels}) {
           <ResultHeader />
 
           {<ol>{parcels}</ol>}
-
           <div id="results-footer">-</div>
         </div>
       )}

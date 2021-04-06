@@ -6,7 +6,7 @@ Link to the App : [Package tracking App](https://package-tracking-app-6e0dd.web.
 
 ## Use the app
 
-Enter a user_name (which is case sensitive) to find more details about parcels associated to that user.
+Enter a user_name (which is case sensitive) to find more details about parcels associated to that user.\
 example : `Barack Obama`
 
 
