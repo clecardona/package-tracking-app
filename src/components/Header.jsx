@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header>
       <img src={logo} alt="Logo" />
-      <p >{t("main.title")}</p>
+      <p><em>Yellow Corporation</em> <br/>{t("main.title")}</p>
       <div>
       <p id="button-label">{t("main.language")}</p>
         <div id="button-container">
