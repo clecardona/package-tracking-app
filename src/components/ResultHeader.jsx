@@ -1,15 +1,19 @@
+//NPM packages
+import { useTranslation } from "react-i18next";
 
 
 export default function ResultHeader() {
-       
+
+     //constants  
+     const [t] = useTranslation('common');     
   
     return (
 
 <ul>    
-            <li>Number</li>
-            <li>Status</li>
-            <li>ETA</li>
-            <li>Pick up Location</li>
+            <li>{t("main.number")}</li>
+            <li>{t("main.status")}</li>
+            <li>{t("main.eta")}</li>
+            <li>{t("main.location")}</li>
           </ul>
      
     );

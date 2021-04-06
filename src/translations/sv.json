@@ -1,0 +1,17 @@
+{
+    "main": {
+        "title": "Spåra din paket",
+        "language": "språk",
+
+        "form-placeholder": "Skriv username (skiftlägeskänsliga)",
+        "form-submit-value": "Sök",
+
+        "number": "Nummer",
+        "status": "Status",
+        "eta": "Ankomstdatum",
+        "location": "Plats",
+
+        "nofound": "Ingen träff ",
+        "found": "Paket tillgängligt för"
+    }
+}

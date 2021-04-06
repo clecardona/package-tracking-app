@@ -18,28 +18,28 @@ export default function ParcelSearch() {
   // Constants
   const API_URL = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
 
-  
-
   //Methods
   useEffect(() => {
     fetch(API_URL)
       .then((response) => response.json())
       .then((json) => onFetchSuccess(json))
       .catch((error) => onFetchFail(error));
-  }, [setCurrentQueryValue]); 
+      console.log("fetch API");
+     
+  }, [currentQueryValue]); 
 
   function handleSearch(event) {
-    event.preventDefault();
-    setCurrentQueryValue(query); // here hook triggers the "API fetch"
-    // search user_name into JSON data
+    setCurrentQueryValue(query); 
+    event.preventDefault();      
+    
+    // search user_name into data (JSON object)
     const matchedParcels = data
-      .filter((item) => item.user_name === query)
-      .map((item) => <Parcel information={item} />);
+    .filter((item) => item.user_name === query)
+    .map((item) => <Parcel key={item.id} information={item} />);
     setParcels(matchedParcels);
     {matchedParcels.length < 1 ? setMatch(false) : setMatch(true);}
   }
-
-//TODO -check that data exists -
+  
   function onFetchSuccess(json) {
     setData(json);
     setStatus(2);
@@ -59,7 +59,7 @@ export default function ParcelSearch() {
       {status === 2 && <main>  
 
       <div className="container-search">
-        <Form handleSearch={handleSearch} query={query} setQuery={setQuery} />
+        <Form handleSearch={handleSearch} entry={query} setQuery={setQuery} />
       </div>
       
         <ParcelDisplayer
