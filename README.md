@@ -1,17 +1,34 @@
 # Getting Started with Parcel Tracker App
 
-This project was created with [Create React App](https://github.com/facebook/create-react-app).
-
-Link to the App : [Package tracking App](https://package-tracking-app-6e0dd.web.app/)
+This project was created with [Create React App](https://github.com/facebook/create-react-app).\
+Link to the App : [Yellow Corporation Parcel Tracker App](https://package-tracking-app-6e0dd.web.app/)
 
 ### Use the app
 
-Enter a user_name (which is case sensitive) to find more details about parcels associated to that user.\
-example : `Barack Obama`
+#### Search a parcel
+Enter a user_name ( case sensitive) to find more details about parcels associated to that user.
+example : `Jhon Doe`
+
+#### Change language
+A basic implementation has been made by selecting the language on the header.
+Languages implemented :
+
+- English (default)
+- French
+- Swedish
+**To go further** , it would be interesting to use that component : .[react-localization](https://www.npmjs.com/package/react-localization)
+It uses the interface language to select the language that will be displayed to user.
 
 
+### Screenshots
 
-### Available Scripts
+#### Home
+![home](src/assets/screenshots/home.jpg)
+#### Search results
+![results](src/assets/screenshots/results.jpg)
+
+
+### Getting started
 
 In the project directory, you can run:
 
@@ -36,15 +53,19 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
+#### Deployment
+##### General infos
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-#### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### Using Firebase
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run following code in Terminal:\
+`npm run build`\
+`firebase deploy`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
+### Dependencies
+#### Components
+- [i18next](https://www.npmjs.com/package/i18next): Internationalization
+- [moment](https://www.npmjs.com/package/react-moment) : Date formatting
+- [@varld/popover](https://www.npmjs.com/package/@varld/popover) : Pop-over feature
