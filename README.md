@@ -61,7 +61,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ##### Using Firebase
 
 Run following code in Terminal:\
-`npm run build`\
+`firebase use folder build`\
 `firebase deploy`
 
 ### Dependencies
