@@ -9,7 +9,7 @@
         "number": "Nummer",
         "status": "Status",
         "eta": "Ankomstdatum",
-        "location": "Upphämtningsplats",
+        "location": "Plats",
 
         "nofound": "Ingen träff ",
         "found": "Paket tillgängligt för"

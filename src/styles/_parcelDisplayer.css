@@ -48,6 +48,7 @@ ol li {
     background-color: white;
     font-size: 10px;
     display: grid;
+    justify-items: center;
 }
 
 #results-footer {
@@ -56,6 +57,46 @@ ol li {
     height: 10px;
 }
 
-.parcel-id{
+.parcel-id {
     font-weight: 600;
+}
+
+li button, .popover button {
+    background-color: var(--blue);
+    color: white;
+    min-width: 50px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 2px 2px;
+    border: none;
+    box-shadow: 2px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+.link {
+    background-color: var(--blue);
+    width: 80%;
+    min-width: 30px;
+    font-size: 9px;
+    border-radius: 5px;
+    padding: 2px 2px;
+    border: none;
+    box-shadow: 2px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+li a {
+    font-size: 12px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.popover {
+    width: 100px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.popover em {
+    text-decoration: none;
+    font-weight: 700;
 }
