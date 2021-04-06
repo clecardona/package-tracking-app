@@ -1,16 +1,13 @@
-import './styles/base.css';
-import Header from './components/Header'
-import ParcelSearch from './components/ParcelSearch'
+// Project files
+import Home from "./pages/Home";
+import "./styles/base.css";
 
 export default function App() {
-  return (
-      <div className="App">
-     < Header />
+   
 
-     <ParcelSearch />
-     
+  return (
+    <div className="App">
+      <Home/>     
     </div>
   );
 }
-
-
