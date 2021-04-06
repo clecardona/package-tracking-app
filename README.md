@@ -11,8 +11,6 @@ example : `Barack Obama`
 
 
 
-
-
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,15 +1,16 @@
 // NPM packages
 import Moment from "react-moment";
 
-export default function Parcel({ id, parcel_id, eta, location_name, status }) {
-  const estimatedArrivalDate = <Moment format="DD MMM YY">{eta}</Moment>;
+export default function Parcel({information}) {
+// constants
+  const estimatedArrivalDate = <Moment format="DD MMM YY">{information.eta}</Moment>;
 
   return (
-    <li key={id}>
-      <p> # {parcel_id} </p>
-      <p>{status}</p>
+    <li key={information.id}>
+      <p className="parcel-id"> # {information.parcel_id} </p>
+      <p>{information.status}</p>
       <p>{estimatedArrivalDate} </p>
-      <p>{location_name} </p>
+      <p>{information.location_name} </p>
     </li>
   );
 }

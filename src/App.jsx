@@ -1,25 +1,13 @@
-import { useEffect} from "react";
-
-import './styles/base.css';
-import Header from './components/Header'
-import ParcelSearch from './components/ParcelSearch'
-
+// Project files
+import Home from "./pages/Home";
+import "./styles/base.css";
 
 export default function App() {
-
-  // Methods 
-  useEffect(() => {
-    document.title = "Parcel Tracking"
- }, []);
+   
 
   return (
-      <div className="App">
-       
-     < Header />
-     <ParcelSearch />
-     
+    <div className="App">
+      <Home/>     
     </div>
   );
 }
-
-

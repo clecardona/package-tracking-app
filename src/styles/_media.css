@@ -1,26 +1,18 @@
-
 /* --- Tablets -- */
-@media screen and (min-height: 550px){
 
-    html{
+@media screen and (min-height: 550px) {
+    html {
         font-size: 20px;
     }
-        
 }
 
 /* --- Desktops -- */
-@media screen and ( min-height: 750px){
 
-    html{
+@media screen and ( min-height: 750px) {
+    html {
         font-size: 25px;
-        
-              
-      
-
     }
-    body{
-        max-width:800px;
-       
-        }
-        
+    body {
+        max-width: 800px;
+    }
 }
